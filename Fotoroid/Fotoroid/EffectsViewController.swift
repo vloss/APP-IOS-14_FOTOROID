@@ -11,13 +11,14 @@ class EffectsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var viLoading: UIView!
-    @IBOutlet weak var viPhoto: UIImageView!
+    @IBOutlet weak var ivPhoto: UIImageView!
+    
     
     var image: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viPhoto.image = image
+        ivPhoto.image = image
     }
     
     // Vai aparecer

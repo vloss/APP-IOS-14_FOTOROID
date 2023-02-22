@@ -101,10 +101,10 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNu-5z-rSm">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNu-5z-rSm">
                                 <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="seB-MV-MNE">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="seB-MV-MNE">
                                         <rect key="frame" x="178" y="356" width="37" height="37"/>
                                         <color key="color" red="0.98431372640000003" green="0.90196073060000004" blue="0.35686278339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </activityIndicatorView>
@@ -141,9 +141,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="g6J-gx-1n7" id="v5c-gJ-Ekm"/>
-                        <outlet property="ivPhoto" destination="P9K-OG-31h" id="98q-cN-BWz"/>
+                        <outlet property="ivPhoto" destination="P9K-OG-31h" id="pjs-NP-dSu"/>
                         <outlet property="viLoading" destination="TNu-5z-rSm" id="IX5-pd-lr3"/>
-                        <outlet property="viPhoto" destination="P9K-OG-31h" id="GlO-ZJ-ZMw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dU4-ce-Y9X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
