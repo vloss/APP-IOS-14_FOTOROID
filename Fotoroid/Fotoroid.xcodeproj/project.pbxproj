@@ -16,6 +16,7 @@
 		B7DE47A729A5B45500164A82 /* EffectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE47A629A5B45500164A82 /* EffectsViewController.swift */; };
 		B7DE47A929A5B4A500164A82 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE47A829A5B4A500164A82 /* FinalViewController.swift */; };
 		B7DE47AB29A6DB1E00164A82 /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE47AA29A6DB1E00164A82 /* FilterManager.swift */; };
+		B7DE47AD29A707D400164A82 /* EffectsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE47AC29A707D400164A82 /* EffectsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B7DE47A629A5B45500164A82 /* EffectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsViewController.swift; sourceTree = "<group>"; };
 		B7DE47A829A5B4A500164A82 /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
 		B7DE47AA29A6DB1E00164A82 /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
+		B7DE47AC29A707D400164A82 /* EffectsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				B7DE479229A56D7600164A82 /* AppDelegate.swift */,
 				B7DE479429A56D7600164A82 /* SceneDelegate.swift */,
+				B7DE47AC29A707D400164A82 /* EffectsCollectionViewCell.swift */,
 				B7DE479629A56D7600164A82 /* ViewController.swift */,
 				B7DE47A629A5B45500164A82 /* EffectsViewController.swift */,
 				B7DE47A829A5B4A500164A82 /* FinalViewController.swift */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7DE47AD29A707D400164A82 /* EffectsCollectionViewCell.swift in Sources */,
 				B7DE47A929A5B4A500164A82 /* FinalViewController.swift in Sources */,
 				B7DE479729A56D7600164A82 /* ViewController.swift in Sources */,
 				B7DE47A729A5B45500164A82 /* EffectsViewController.swift in Sources */,
