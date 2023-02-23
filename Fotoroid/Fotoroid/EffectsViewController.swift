@@ -35,6 +35,11 @@ class EffectsViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! FinalViewController
+        vc.image = ivPhoto.image
+    }
+    
     func showLoad(_ show: Bool){
         viLoading.isHidden = !show
     }
@@ -61,9 +66,20 @@ extension EffectsViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let type = FilterType(rawValue: indexPath.row){
             showLoad(true)
-            let filteredImage = self.filterManager.applyFilter(type: type)
-            self.ivPhoto.image = filteredImage
-            showLoad(false)
+            
+            //Thread Globa assincrona
+            DispatchQueue.global(qos: .userInitiated).async {
+                let filteredImage = self.filterManager.applyFilter(type: type)
+                
+                // Retorna para Thread maina, para malipular elementos na view.
+                DispatchQueue.main.async {
+                    self.ivPhoto.image = filteredImage
+                    self.showLoad(false)
+                }
+            }
+            
+
+            
         }
     }
 }
