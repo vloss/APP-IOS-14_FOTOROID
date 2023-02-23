@@ -8,7 +8,7 @@
 import UIKit
 
 class EffectsViewController: UIViewController {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var viLoading: UIView!
     @IBOutlet weak var ivPhoto: UIImageView!
@@ -20,6 +20,10 @@ class EffectsViewController: UIViewController {
         return filterManager
     }()
     
+    let filterImageNames = [
+        "comic", "sepia", "halftone", "crystallize", "vignette", "noir"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ivPhoto.image = image
@@ -30,7 +34,10 @@ class EffectsViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
-
+    
+    func showLoad(_ show: Bool){
+        viLoading.isHidden = !show
+    }
     
 }
 
@@ -44,8 +51,19 @@ extension EffectsViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EffectsCollectionViewCell
+        
+        cell.ivEffect.image = UIImage(named: filterImageNames[indexPath.row])
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let type = FilterType(rawValue: indexPath.row){
+            showLoad(true)
+            let filteredImage = self.filterManager.applyFilter(type: type)
+            self.ivPhoto.image = filteredImage
+            showLoad(false)
+        }
     }
 }
